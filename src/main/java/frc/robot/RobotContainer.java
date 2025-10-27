@@ -18,8 +18,10 @@ import static frc.robot.subsystems.vision.VisionConstants.*;
 import com.pathplanner.lib.auto.AutoBuilder;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -48,6 +50,8 @@ public class RobotContainer {
   // Subsystems
   private final Drive drive;
   private final Vision vision;
+  public static NetworkTableInstance ntInstance = NetworkTableInstance.getDefault();
+  public static Field2d m_simField = new Field2d();
 
   // Controller
   private final CommandXboxController controller = new CommandXboxController(0);
